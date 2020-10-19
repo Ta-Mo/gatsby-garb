@@ -29,6 +29,7 @@ const Products = ({ data: { allContentfulProduct } }) => (
   </Layout>
 )
 
+// if using tracedSVG read: https://www.gitmemory.com/issue/gatsbyjs/gatsby/14245/495334581
 export const query = graphql`
   {
     allContentfulProduct {
@@ -48,5 +49,4 @@ export const query = graphql`
     }
   }
 `
-
 export default Products
