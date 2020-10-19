@@ -1,3 +1,4 @@
+//image.js
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
@@ -23,6 +24,14 @@ const Image = () => {
           }
         }
       }
+
+      iconFileQuery: file(relativePath: { eq: "gatsby-icon.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 590) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
@@ -30,7 +39,12 @@ const Image = () => {
     return <div>Picture not found</div>
   }
 
-  return <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+  return (
+    <>
+      <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+      <Img fluid={data.iconFileQuery.childImageSharp.fluid} />
+    </>
+  )
 }
 
 export default Image
