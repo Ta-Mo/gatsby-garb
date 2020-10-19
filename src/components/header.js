@@ -40,7 +40,15 @@ const Header = ({ siteTitle }) => (
           }}
         />
         <h1 style={{ margin: 0 }}>
-          <NavLink to="/">{siteTitle}</NavLink>
+          <NavLink
+            to="/"
+            /*  style={{
+              color: `white`,
+              textDecoration: `none`,
+            }} */
+          >
+            {siteTitle}
+          </NavLink>
         </h1>
       </span>
       <NavLink to="/blog">Blog</NavLink>
